@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+@plugin "@iconify/tailwind4" {
+  prefixes: mdi, uil;
+}
+
+@theme {
+  --color-magma-10: #fcfdbf;
+  --color-magma-20: #fddc9e;
+  --color-magma-30: #febb81;
+  --color-magma-40: #fd9a6a;
+  --color-magma-50: #f8765c;
+  --color-magma-60: #eb5760;
+  --color-magma-70: #d3436e;
+  --color-magma-80: #b73779;
+  --color-magma-90: #982d80;
+  --color-magma-100: #7b2382;
+  --color-magma-110: #5f187f;
+  --color-magma-120: #400f74;
+  --color-magma-130: #221150;
+  --color-magma-140: #0c0926;
+  --color-magma-150: #000004;
+}
