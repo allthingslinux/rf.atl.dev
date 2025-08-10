@@ -1,22 +1,15 @@
-import adapter from '@sveltejs/adapter-cloudflare';
+import adapter from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-    preprocess: vitePreprocess(),
+  // Consult https://svelte.dev/docs/kit/integrations
+  // for more information about preprocessors
+  preprocess: vitePreprocess(),
 
-    kit: {
-        adapter: adapter({
-            // See https://kit.svelte.dev/docs/adapter-cloudflare
-            routes: {
-                include: ['/*'],
-                exclude: ['<all>']
-            }
-        }),
-        output: {
-            preloadStrategy: 'preload-mjs'
-        }
-    }
+  kit: {
+    adapter: adapter()
+  }
 };
 
 export default config;
