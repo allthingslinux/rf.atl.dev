@@ -7,7 +7,9 @@ addEventListener('fetch', event => {
 async function handleRequest(request) {
   try {
     // Handle static assets
-    return await getAssetFromKV(event, {
+    return await getAssetFromKV(request, {
+      ASSET_NAMESPACE: __STATIC_CONTENT,
+      ASSET_MANIFEST: __STATIC_CONTENT_MANIFEST,
       // Add support for SPA routing
       mapRequestToAsset: req => {
         const parsedUrl = new URL(req.url)
@@ -37,7 +39,9 @@ async function handleRequest(request) {
   } catch (e) {
     // If asset not found, serve 404.html
     try {
-      return await getAssetFromKV(event, {
+      return await getAssetFromKV(request, {
+        ASSET_NAMESPACE: __STATIC_CONTENT,
+        ASSET_MANIFEST: __STATIC_CONTENT_MANIFEST,
         mapRequestToAsset: req => new Request(`${new URL(req.url).origin}/404.html`, req)
       })
     } catch (e404) {
