@@ -1,21 +1,19 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  // Consult https://svelte.dev/docs/kit/integrations
-  // for more information about preprocessors
-  preprocess: vitePreprocess(),
+    preprocess: vitePreprocess(),
 
-  kit: {
-    adapter: adapter({
-      pages: 'build',
-      assets: 'build',
-      fallback: '404.html',
-      precompress: false,
-      strict: true
-    })
-  }
+    kit: {
+        adapter: adapter({
+            // Output directory for Cloudflare Pages
+            routes: {
+                include: ['/*'],
+                exclude: ['<all>']
+            }
+        })
+    }
 };
 
 export default config;
