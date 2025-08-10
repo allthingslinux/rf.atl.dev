@@ -12,7 +12,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write .",
     "lint": "prettier --check .",
-    "deploy": "wrangler pages deploy build --project-name rf-atl-dev"
+    "deploy": "wrangler deploy"
   },
   "devDependencies": {
     "@iconify-json/uil": "^1.2.3",
@@ -34,6 +34,7 @@
     "wrangler": "^4.28.1"
   },
   "dependencies": {
+    "@cloudflare/kv-asset-handler": "^0.3.4",
     "colormap": "^2.3.2"
   }
 }
