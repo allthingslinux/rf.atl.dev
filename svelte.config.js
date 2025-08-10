@@ -7,12 +7,15 @@ const config = {
 
     kit: {
         adapter: adapter({
-            // Output directory for Cloudflare Pages
+            // See https://kit.svelte.dev/docs/adapter-cloudflare
             routes: {
                 include: ['/*'],
                 exclude: ['<all>']
             }
-        })
+        }),
+        output: {
+            preloadStrategy: 'preload-mjs'
+        }
     }
 };
 
