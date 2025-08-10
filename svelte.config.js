@@ -8,15 +8,7 @@ const config = {
   preprocess: vitePreprocess(),
 
   kit: {
-    adapter: adapter({
-      // Configuration for Cloudflare Workers
-      platformProxy: {
-        configPath: 'wrangler.toml',
-        environment: undefined,
-        experimentalJsonConfig: false,
-        persist: false
-      }
-    })
+    adapter: adapter()
   }
 };
 

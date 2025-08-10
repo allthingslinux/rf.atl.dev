@@ -1,6 +1,9 @@
 name = "rf-atl-dev"
 compatibility_date = "2024-08-10"
-main = ".svelte-kit/output/server/index.js"
+
+# SvelteKit adapter-cloudflare outputs to .svelte-kit/cloudflare/
+main = ".svelte-kit/cloudflare/_worker.js"
+compatibility_flags = ["nodejs_compat"]
 
 [build]
 command = "npm run build"
@@ -8,5 +11,6 @@ command = "npm run build"
 [env.production]
 compatibility_date = "2024-08-10"
 
+# Static assets for SvelteKit
 [site]
 bucket = ".svelte-kit/output/client"
