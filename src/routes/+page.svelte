@@ -226,7 +226,7 @@
 
 <style>
   .rf-text-clip {
-    background-image: url('scroll.png');
+    background-image: url('/scroll.png');
     background-size: auto 200%; /* Adjust background size for scrolling effect */
     background-repeat: repeat-y;
     -webkit-background-clip: text;

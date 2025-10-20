@@ -11,13 +11,16 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write .",
-    "lint": "prettier --check ."
+    "lint": "prettier --check .",
+    "preview:worker": "npm run build && npx wrangler dev",
+    "deploy:worker": "npm run build && npx wrangler deploy"
   },
   "devDependencies": {
     "@iconify-json/uil": "^1.2.3",
     "@iconify/json": "^2.2.348",
     "@iconify/tailwind4": "^1.0.6",
     "@sveltejs/adapter-auto": "^6.0.0",
+    "@sveltejs/adapter-cloudflare": "^7.2.4",
     "@sveltejs/kit": "^2.16.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@tailwindcss/vite": "^4.0.0",
@@ -33,6 +36,7 @@
   },
   "dependencies": {
     "@sveltejs/adapter-node": "^5.2.12",
-    "colormap": "^2.3.2"
+    "colormap": "^2.3.2",
+    "wrangler": "^4.43.0"
   }
 }

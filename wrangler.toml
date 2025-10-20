@@ -1,0 +1,5 @@
+name = "rf-atl-dev"
+compatibility_date = "2025-10-20"
+main = ".svelte-kit/cloudflare/_worker.js"
+assets = { directory = ".svelte-kit/cloudflare", binding = "ASSETS" }
+compatibility_flags = [ "nodejs_compat" ]
